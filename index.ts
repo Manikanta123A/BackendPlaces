@@ -10,10 +10,7 @@ const app = express();
 const port = process.env.PORT || 5002;
 
 app.use(express.json())
-app.use(cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
-    credentials: true, // Allow cookies
-}));
+app.use(cors({ origin: "*", credentials: true }));
 
 app.use("/location", router)
 app.listen(port , ()=>{
