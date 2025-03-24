@@ -16,7 +16,7 @@ export const sendDayDetail = async (req:Request,res:Response)=>{
 }
 export const sendAll =async  (req:Request,res:Response)=>{
     try{
-        const places = await Places.find({},{ lattitude: 1, longitude: 1,name:1,humour:1, _id: 0 });
+        const places = await Places.find({},{ lattitude: 1, longitude: 1,name:1,humour:1,temp:1, _id: 0 });
         if(places != null ){
             res.status(200).json({success:true, places:places})
         }

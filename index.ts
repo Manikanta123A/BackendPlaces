@@ -5,6 +5,7 @@ import { Response } from 'express';
 import connectDb from './connectDb/connectDb';
 import router from './routes/router'
 import cors from 'cors'
+import { getAllFood } from './controller/foodController';
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 5002;
@@ -17,7 +18,8 @@ app.use(
   })
 );
 
-app.use("/location", router)
+app.use("/location", router);
+app.use("/food",getAllFood);
 app.listen(port , ()=>{
     connectDb()
     console.log(`listenign to the port ${port}`);
