@@ -19,7 +19,7 @@ app.use(
 );
 
 app.use("/location", router);
-app.use("/food",getAllFood);
+app.get("/food",getAllFood);
 app.listen(port , ()=>{
     connectDb()
     console.log(`listenign to the port ${port}`);
