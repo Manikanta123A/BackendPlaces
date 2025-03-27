@@ -13,7 +13,7 @@ const port = process.env.PORT || 5002;
 app.use(express.json())
 app.use(
   cors({
-    origin: "http://localhost:5173", // Set frontend URL explicitly
+    origin: ["http://localhost:5173", "https://traveltogeorgia.onrender.com"], // Set frontend URL explicitly
     credentials: true, // Allow credentials (cookies, headers)
   })
 );
